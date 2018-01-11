@@ -1,4 +1,4 @@
-package com.epam.webservices.webservices;
+package com.epam.webservices.tests;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.epam.webservices.businessobjects.EmployeeInformation;
 
 public class RestAssuresTests {
 	Response response = null;

@@ -1,4 +1,4 @@
-package com.epam.webservices.webservices;
+package com.epam.webservices.businessobjects;
 
 public class EmployeeInformation {
 	
