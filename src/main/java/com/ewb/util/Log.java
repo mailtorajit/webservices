@@ -1,6 +1,8 @@
 package com.ewb.util;
 
 import org.apache.log4j.Logger;
+
+import com.relevantcodes.extentreports.LogStatus;
 public class Log {
 	// Initialize Log4j logs
 	private static Logger Log = Logger.getLogger(Log.class.getName());//
@@ -34,5 +36,9 @@ public class Log {
 	}
 	public static void debug(String message) {
 		Log.debug(message);
+	}
+	public static void log(LogStatus fail, String string) {
+		// TODO Auto-generated method stub
+		
 	}
 }

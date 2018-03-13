@@ -5,6 +5,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.ewb.base.BaseTest;
+import com.ewb.util.Log;
 import com.ewb.util.extentreports.ExtentManager;
 import com.ewb.util.extentreports.ExtentTestManager;
  
@@ -17,31 +18,32 @@ public class TestListener extends BaseTest implements ITestListener {
     
     //Before starting all tests, below method runs.
     public void onStart(ITestContext iTestContext) {
-        System.out.println("I am in onStart method " + iTestContext.getName());
+    	Log.info("Started Test " + iTestContext.getName());
+    	//ExtentManager.getReporter().addSystemInfo(info)
     }
  
     //After ending all tests, below method runs.
     public void onFinish(ITestContext iTestContext) {
-        System.out.println("I am in onFinish method " + iTestContext.getName());
+    	Log.info("Finished Test " + iTestContext.getName());
         //Do tier down operations for extentreports reporting!
         ExtentTestManager.endTest();
         ExtentManager.getReporter().flush();
     }
  
     public void onTestStart(ITestResult iTestResult) {
-        System.out.println("I am in onTestStart method " +  getTestMethodName(iTestResult) + " start");
+        Log.info("Execution started *** " +  getTestMethodName(iTestResult));
         //Start operation for extentreports.
         ExtentTestManager.startTest(iTestResult.getMethod().getMethodName(),"");
     }
  
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println("I am in onTestSuccess method " +  getTestMethodName(iTestResult) + " succeed");
+    	Log.info("Exceution Finished **** " +  getTestMethodName(iTestResult) + " *** With Status :: Success");
         //Extentreports log operation for passed tests.
         ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
     }
- 
+    
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("I am in onTestFailure method " +  getTestMethodName(iTestResult) + " failed");
+    	Log.info("Exceution Finished *** " +  getTestMethodName(iTestResult) + " *** With Status :: Failed");
  
         //Get driver from BaseTest and assign to local webdriver variable.
         Object testClass = iTestResult.getInstance();
@@ -50,13 +52,14 @@ public class TestListener extends BaseTest implements ITestListener {
     }
  
     public void onTestSkipped(ITestResult iTestResult) {
-        System.out.println("I am in onTestSkipped method "+  getTestMethodName(iTestResult) + " skipped");
+    	Log.info("Exceution Finished *** "+  getTestMethodName(iTestResult) + " *** With Status :: Skipped");
         //Extentreports log operation for skipped tests.
+    	Object testClass = iTestResult.getInstance();
         ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
     }
  
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-        System.out.println("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
+    	Log.info("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
     }
  
 }

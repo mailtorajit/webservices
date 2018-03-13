@@ -6,10 +6,10 @@ import org.testng.ITestResult;
 import com.ewb.base.BaseTest;
 import com.ewb.util.extentreports.ExtentTestManager;
  
-public class Retry implements IRetryAnalyzer {
+public class Retry extends BaseTest implements IRetryAnalyzer {
  
     private int count = 0;
-    private static int maxTry = 1; //Run the failed test 2 times
+    private static int maxTry = 0; //Run the failed test 2 times
  
     public boolean retry(ITestResult iTestResult) {
         if (!iTestResult.isSuccess()) {                      //Check if test not succeed
