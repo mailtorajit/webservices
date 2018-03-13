@@ -1,21 +1,13 @@
 package com.ewb.util;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Properties;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ConfigManager {
 	private static final String PROPERTIES_FILE = "/automation.properties";
 	private static Properties properties = new Properties();
-	protected static ConcurrentHashMap<String, String> _config = null;
-	protected static Map<Long, ConcurrentHashMap<String, String>> _overridePropertiesHash = Collections
-			.synchronizedMap(new LinkedHashMap<Long, ConcurrentHashMap<String, String>>());
-
+	
 	/**
 	 * static method to get Instance of class AutProperties
 	 * 

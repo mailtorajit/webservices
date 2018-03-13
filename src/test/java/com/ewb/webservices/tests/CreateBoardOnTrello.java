@@ -3,6 +3,7 @@ package com.ewb.webservices.tests;
 import java.util.HashMap;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.ewb.base.BaseTest;
@@ -13,10 +14,14 @@ import io.restassured.specification.RequestSpecification;
 
 public class CreateBoardOnTrello extends BaseTest {
 	Response response = null;
-
+	
+	@BeforeMethod
+	public void setBaseURI(){
+		RestAssured.baseURI = config.getProperty("base_url");
+	}
+	
 	@Test
 	public void CreateBoard() {
-		RestAssured.baseURI = config.getProperty("base_url");
 		response = RestAssured.given().queryParam("name", "gdjkfgkdfhg vfddfs")
 				.queryParam("key", "a7605cf145d463d572cc49c0da962508").queryParam("keepFromSource", "none")
 				.queryParam("prefs_permissionLevel", "private").queryParam("prefs_voting", "disabled")
@@ -47,26 +52,12 @@ public class CreateBoardOnTrello extends BaseTest {
 		Assert.assertEquals(response.getStatusCode(), 200);
 	}
 
-	// @Test
-	// public void getBoard() {
-	// RestAssured.baseURI =
-	// "https://api.trello.com/1/boards/5a39474ee8f87d36d47b4ee7";
-	// response = RestAssured.given().param("key",
-	// "a7605cf145d463d572cc49c0da962508")
-	// .and().param("token",
-	// "922e97bf18da9254f03ffcf2b19e6f60376657125bf7ed5da94fbeda5d0c087d").get();
-	// System.out.println(response.getStatusCode());
-	// System.out.println(response.asString());
-	// }
+	@Test
+	public void getBoard() {
+		response = RestAssured.given().param("key", "a7605cf145d463d572cc49c0da962508").and()
+				.param("token", "922e97bf18da9254f03ffcf2b19e6f60376657125bf7ed5da94fbeda5d0c087d").get("/1/boards/5a39474ee8f87d36d47b4ee7");
+		System.out.println(response.getStatusCode());
+		System.out.println(response.asString());
+	}
 
-	// @Test
-	// public void deleteBoard() {
-	// RestAssured.baseURI = "https://api.trello.com/1/boards/SIWq92KP";
-	// response = RestAssured.given().param("key",
-	// "a7605cf145d463d572cc49c0da962508")
-	// .and().param("token",
-	// "922e97bf18da9254f03ffcf2b19e6f60376657125bf7ed5da94fbeda5d0c087d").delete();
-	// System.out.println(response.getStatusCode());
-	// System.out.println(response.asString());
-	// }
 }

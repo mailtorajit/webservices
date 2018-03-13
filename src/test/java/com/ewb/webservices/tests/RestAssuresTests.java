@@ -6,25 +6,27 @@ import io.restassured.response.Response;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.ewb.base.BaseTest;
 import com.ewb.webservices.businessobjects.EmployeeInformation;
 
-public class RestAssuresTests {
+public class RestAssuresTests extends BaseTest{
 	Response response = null;
 
-	@BeforeClass
+	@BeforeMethod
 	@Parameters({ "domain", "resource" })
 	public void setUri(String domainName, String endpoint) {
 		RestAssured.baseURI = domainName;
 		response = RestAssured.given().get("/" + endpoint).andReturn();
 	}
-
+	
 	@Test
 	@Parameters({ "statusCode" })
 	public void verifyStatusCode(int statusCode) {
+		System.out.println(config);
 		Assert.assertEquals(response.getStatusCode(), statusCode);
 	}
 
