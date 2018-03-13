@@ -3,11 +3,13 @@ package com.ewb.webservices.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.ewb.base.BaseTest;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class CreateBoardOnTrello {
+public class CreateBoardOnTrello extends BaseTest{
 	Response response = null;
 
 	@Test

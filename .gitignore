@@ -5,3 +5,5 @@ target/
 target/
 test-output/
 .settings/
+Logs/
+/Logs/
