@@ -7,3 +7,5 @@ test-output/
 .settings/
 Logs/
 /Logs/
+/ExtentReports/
+ExtentReports/
