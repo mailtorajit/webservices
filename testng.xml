@@ -16,6 +16,7 @@
 					<include name="printObjects" />
 				</methods>
 			</class>
+			<class name="com.ewb.webservices.tests.CreateBoardOnTrello"/>
 		</classes>
 	</test>
 </suite>
