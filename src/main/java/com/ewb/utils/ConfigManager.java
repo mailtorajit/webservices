@@ -1,4 +1,4 @@
-package com.ewb.util;
+package com.ewb.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

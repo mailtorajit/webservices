@@ -1,4 +1,4 @@
-package com.ewb.util;
+package com.ewb.utils;
 
 import org.apache.log4j.Logger;
 

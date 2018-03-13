@@ -1,4 +1,4 @@
-package com.ewb.util;
+package com.ewb.utils;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;

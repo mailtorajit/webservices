@@ -1,4 +1,4 @@
-package com.ewb.util.extentreports;
+package com.ewb.utils.ExtentReports;
  
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;

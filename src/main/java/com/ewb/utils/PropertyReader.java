@@ -1,4 +1,4 @@
-package com.ewb.util;
+package com.ewb.utils;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;

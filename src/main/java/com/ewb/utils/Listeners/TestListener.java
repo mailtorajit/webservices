@@ -1,13 +1,13 @@
-package com.ewb.util.listners;
+package com.ewb.utils.Listeners;
  
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.ewb.base.BaseTest;
-import com.ewb.util.Log;
-import com.ewb.util.extentreports.ExtentManager;
-import com.ewb.util.extentreports.ExtentTestManager;
+import com.ewb.utils.Log;
+import com.ewb.utils.ExtentReports.ExtentManager;
+import com.ewb.utils.ExtentReports.ExtentTestManager;
  
  
 public class TestListener extends BaseTest implements ITestListener {

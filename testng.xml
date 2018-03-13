@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Rest API">
 	<listeners>
-		<listener class-name="com.ewb.util.listners.TestListener" />
-		<listener class-name="com.ewb.util.listners.AnnotationTransformer" />
+		<listener class-name="com.ewb.utils.Listeners.TestListener" />
+		<listener class-name="com.ewb.utils.Listeners.AnnotationTransformer" />
 	</listeners>
 	<test name="API TEST" preserve-order="true">
 		<parameter name="domain" value="https://jsonplaceholder.typicode.com" />

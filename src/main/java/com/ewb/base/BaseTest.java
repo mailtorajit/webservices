@@ -14,8 +14,8 @@ import org.testng.annotations.BeforeSuite;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.ewb.util.ConfigManager;
-import com.ewb.util.Log;
+import com.ewb.utils.ConfigManager;
+import com.ewb.utils.Log;
 
 public class BaseTest {
 	public static ConfigManager config;
@@ -31,7 +31,7 @@ public class BaseTest {
 		config = ConfigManager.getInstance(PROPERTIES_FILE);	
 		String workingDir = System.getProperty("user.dir");
         extent = new ExtentReports(workingDir+"//ExtentReports//ExtentReportResults.html", true);
-        extent.loadConfig(new File(workingDir+"//src/main//java//com//ewb//util//extentreports//reportconfig.xml"));
+        extent.loadConfig(new File(workingDir+"//src/main//java//com//ewb//utils//ExtentReports//reportconfig.xml"));
 	}
 
 	@AfterSuite(alwaysRun = true)

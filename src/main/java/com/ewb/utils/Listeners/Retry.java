@@ -1,10 +1,10 @@
-package com.ewb.util.listners;
+package com.ewb.utils.Listeners;
  
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import com.ewb.base.BaseTest;
-import com.ewb.util.extentreports.ExtentTestManager;
+import com.ewb.utils.ExtentReports.ExtentTestManager;
  
 public class Retry extends BaseTest implements IRetryAnalyzer {
  
