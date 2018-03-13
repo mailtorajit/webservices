@@ -1,4 +1,4 @@
-package com.epam.webservices.businessobjects;
+package com.ewb.webservices.businessobjects;
 
 public class Company {
 

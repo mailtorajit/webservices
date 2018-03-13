@@ -4,7 +4,7 @@
 		<parameter name="domain" value="https://jsonplaceholder.typicode.com" />
 		<parameter name="resource" value="users" />
 		<classes>
-			<class name="com.epam.webservices.webservices.RestAssuresTests">
+			<class name="com.ewb.webservices.tests.RestAssuresTests">
 				<methods>
 					<parameter name="statusCode" value="200" />
 					<include name="verifyStatusCode" />
