@@ -20,8 +20,6 @@
 					<include name="printObjects" />
 				</methods>
 			</class>
-
-			<class name="com.ewb.webservices.tests.CreateBoardOnTrello"></class>
 		</classes>
 	</test>
 </suite>
