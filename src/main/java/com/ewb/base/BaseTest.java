@@ -30,7 +30,7 @@ public class BaseTest {
 	public final void mandatoryBeforeSuite(ITestContext context) {
 		config = ConfigManager.getInstance(PROPERTIES_FILE);	
 		String workingDir = System.getProperty("user.dir");
-        extent = new ExtentReports(workingDir+"//ExtentReports//ExtentReportResults.html", true);
+        extent = new ExtentReports(workingDir+"//ExtentReports//TestExecutionResults.html", true);
         extent.loadConfig(new File(workingDir+"//src/main//java//com//ewb//utils//ExtentReports//reportconfig.xml"));
 	}
 
